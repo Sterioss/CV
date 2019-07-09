@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Hire me - Brand</title>
+    <title>Hire me</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
@@ -16,45 +16,129 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="cv.html">CV</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="hire-me.html">Hire me</a></li>
-                </ul>
-            </div>
+<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
+    <div class="container">
+        <button data-toggle="collapse" class="navbar-toggler" data-target="#navbarNav"><span class="sr-only">Toggle navigation</span><span
+                class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav ml-auto">
+                <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link" href="cv.html">CV</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link active" href="hire-me.html">Hire me</a></li>
+            </ul>
         </div>
-    </nav>
-    <main class="page hire-me-page">
-        <section class="portfolio-block hire-me">
-            <div class="container">
-                <div class="heading">
-                    <h2>Hire Me</h2>
-                </div>
-                <form action="https://formspree.io/thomas.tosch@outlook.fr" method="POST">
-                    <div class="form-group"><label for="email">Email</label><input class="form-control" type="email" id="email" name="email"></div>
-                    <div class="form-group"><label for="message">Message</label><textarea class="form-control" id="message" name="message"></textarea></div>
-                    <div class="form-group">
-                        <div class="form-row">
-                            <div class="col-md-6 offset-xl-3 button"><button class="btn btn-primary btn-block" type="submit">Hire Me</button></div>
+    </div>
+</nav>
+<main class="page hire-me-page">
+    <section class="portfolio-block hire-me">
+        <div class="container">
+            <div class="heading">
+                <h2>Hire Me</h2>
+            </div>
+            <form id="hire-me" method="post" action="">
+                <div class="form-group"><label for="email">Email</label><input class="form-control" type="email"
+                                                                               id="email" name="email"></div>
+                <div class="form-group"><label for="message">Message</label><textarea class="form-control" id="message"
+                                                                                      name="message"></textarea></div>
+                <div class="form-group">
+                    <div class="form-row">
+                        <div class="col-md-6 offset-xl-3 button">
+                            <button class="btn btn-primary btn-block" type="submit">Hire Me</button>
                         </div>
                     </div>
-                </form>
-            </div>
-        </section>
-    </main>
-    <footer class="page-footer">
-        <div class="container">
-            <div class="links"><a href="about.html">About me</a><a href="mailto:thomas.tosch@uha.fr">Contact me</a></div>
-            <div class="social-icons"><a href="https://www.linkedin.com/in/thomas-tosch-88b610153/"><i class="icon ion-social-linkedin"></i></a></div>
+                </div>
+            </form>
         </div>
-    </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+    </section>
+</main>
+<footer class="page-footer">
+    <div class="container">
+        <div class="links"><a href="about.html">About me</a><a href="mailto:thomas.tosch@uha.fr">Contact me</a></div>
+        <div class="social-icons"><a href="https://www.linkedin.com/in/thomas-tosch-88b610153/"><i
+                class="icon ion-social-linkedin"></i></a></div>
+    </div>
+</footer>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+<script src="assets/js/script.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parse/2.4.0/parse.min.js"></script>
+<script>
+    (function (b) {
+        b.toast = function (a, h, g, l, k) {
+            b("#toast-container").length || (b("body").prepend('<div id="toast-container" aria-live="polite" aria-atomic="true"></div>'), b("#toast-container").append('<div id="toast-wrapper"></div>'));
+            var c = "", d = "", e = "text-muted", f = "", m = "object" === typeof a ? a.title || "" : a || "Notice!";
+            h = "object" === typeof a ? a.subtitle || "" : h || "";
+            g = "object" === typeof a ? a.content || "" : g || "";
+            k = "object" === typeof a ? a.delay || 3E3 : k || 3E3;
+            switch ("object" === typeof a ? a.type || "" : l || "info") {
+                case "info":
+                    c = "bg-info";
+                    f = e = d = "text-white";
+                    break;
+                case "success":
+                    c = "bg-success";
+                    f = e = d = "text-white";
+                    break;
+                case "warning":
+                case "warn":
+                    c = "bg-warning";
+                    f = e = d = "text-white";
+                    break;
+                case "error":
+                case "danger":
+                    c = "bg-danger", f = e = d = "text-white"
+            }
+            a = '<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-delay="' + k + '">' + ('<div class="toast-header ' + c + " " + d + '">') + ('<strong class="mr-auto">' + m + "</strong>");
+            a += '<small class="' + e + '">' + h + "</small>";
+            a += '<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">';
+            a += '<span aria-hidden="true" class="' + f + '">&times;</span>';
+            a += "</button>";
+            a += "</div>";
+            "" !== g && (a += '<div class="toast-body">', a += g, a += "</div>");
+            a += "</div>";
+            b("#toast-wrapper").append(a);
+            b("#toast-wrapper .toast:last").toast("show")
+        }
+    })(jQuery);
+
+    Parse.serverURL = 'https://parseapi.back4app.com'; // This is your Server URL
+    Parse.initialize(
+        'aUYaMReBfgxuH8buyTNfk3Jeq1NqNBx7HBtsg1Xl', // This is your Application ID
+        'aPyE0NV0ZKxZN6fqDCfiJcrZIXwBRjPGltxf2qMG' // This is your Javascript key
+    );
+
+    $("#hire-me").submit(function (e) {
+        e.preventDefault();
+        const MessagesClass = Parse.Object.extend('Messages');
+        const message = new MessagesClass();
+        message.set('message', $("input[name=message]").val());
+        message.set('email', $("input[name=email]").val());
+
+        message.save().then(
+            (result) => {
+                $.toast({
+                    title: 'Success !',
+                    subtitle: 'just now',
+                    content: '<i>Your message was successfully sent.</i><br> I will be checking my inbox and replying to you as soon as possible !',
+                    delay: 10000,
+                    type: 'success',
+                });
+                console.log('ParseObject created', result);
+            },
+            (error) => {
+                $.toast({
+                    title: 'Error !',
+                    subtitle: 'just now',
+                    content: '<i>An error occured !</i><br>' + error,
+                    delay: 10000,
+                    type: 'error',
+                });
+                console.error('Error while creating ParseObject: ', error);
+            }
+        );
+    });
+</script>
 </body>
 
 </html>
