@@ -112,7 +112,7 @@
         e.preventDefault();
         const MessagesClass = Parse.Object.extend('Messages');
         const message = new MessagesClass();
-        message.set('message', $("input[name=message]").val());
+        message.set('message', $("textarea[name=message]").val());
         message.set('email', $("input[name=email]").val());
 
         message.save().then(
