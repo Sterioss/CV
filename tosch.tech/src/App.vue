@@ -391,16 +391,7 @@ export default {
   height: 3px;
 }
 
-.portfolio-info-card.contact-info {
-  font-weight: 300;
-}
 
-.portfolio-info-card.contact-info .icon {
-  font-size: 1.3em;
-  color: #6091ef;
-  position: relative;
-  bottom: 4px;
-}
 
 .portfolio-block.cv .hobbies p {
   max-width: 700px;

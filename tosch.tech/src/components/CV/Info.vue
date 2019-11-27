@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="row">
     <div class="col-1">
-      <component :is="iconLoader"></component>
+      <component :is="this.icon + '-icon'" rootClass="icon" />
     </div>
     <div class="col-9">
       <span>{{ text }}</span>
@@ -15,13 +15,20 @@ export default {
   props: {
     icon: String,
     text: String
-  },
-  computed: {
-    iconLoader() {
-      return () => import("vue-ionicons/dist/${this.icon}");
-    }
   }
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+span {
+  font-weight: 300;
+}
+
+.icon {
+  height: 1.3em;
+  width: 20px;
+  fill: #6091ef;
+  position: relative;
+  bottom: 4px;
+}
+</style>
