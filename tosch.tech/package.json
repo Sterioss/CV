@@ -18,7 +18,8 @@
     "material-icons": "^0.3.1",
     "pikaday": "^1.8.0",
     "popper.js": "^1.16.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "vue-ionicons": "^3.0.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^4.0.0",
@@ -45,8 +46,7 @@
       "google",
       "@vue/prettier"
     ],
-    "rules": {
-    },
+    "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
     },

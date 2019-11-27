@@ -2,7 +2,10 @@
   <div id="app">
     <Header></Header>
     <Main></Main>
+    <section class="portfolio-block website gradient"></section>
     <CV></CV>
+    <HireMe></HireMe>
+    <About></About>
     <footer class="page-footer">
       <Footer></Footer>
     </footer>
@@ -14,10 +17,30 @@ import Header from "./components/Header";
 import Main from "./components/Main";
 import Footer from "./components/Footer";
 import CV from "./components/CV";
+import HireMe from "./components/HireMe";
+import About from "./components/About";
+import Pikaday from "pikaday";
+import $ from "jquery";
 
+$(document).ready(function() {
+  $("[data-bs-hover-animate]")
+    .mouseenter(function() {
+      var a = $(this);
+      a.addClass("animated " + a.attr("data-bs-hover-animate"));
+    })
+    .mouseleave(function() {
+      var a = $(this);
+      a.removeClass("animated " + a.attr("data-bs-hover-animate"));
+    });
+});
+$(".datepicker").each(function() {
+  new Pikaday({ field: this });
+});
 export default {
   name: "app",
   components: {
+    About,
+    HireMe,
     CV,
     Footer,
     Main,
@@ -29,10 +52,16 @@ export default {
 <style>
 #app {
   scroll-behavior: smooth;
-  font-family: sans-serif;
-  line-height: 1.15;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  font-family: Lato, sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff;
 }
 
 .modal-frame {

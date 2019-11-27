@@ -7,7 +7,6 @@ import "bootstrap/dist/css/bootstrap.css";
 import "material-icons/css/material-icons.min.css";
 import "lato-font/css/lato-font.min.css";
 import "font-awesome/css/font-awesome.min.css";
-import "ionicons/dist/css/ionicons.min.css";
 
 Vue.config.productionTip = false;
 

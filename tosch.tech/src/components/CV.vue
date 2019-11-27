@@ -460,29 +460,30 @@
         <div
           class="col-md-6 col-xl-5 offset-lg-2 offset-xl-3 align-self-center mx-auto"
         >
-          <div class="contact-info portfolio-info-card">
-            <h2>Contact Info</h2>
-            <div class="row">
-              <div class="col-1">
-                <i class="icon ion-android-calendar icon"></i>
-              </div>
-              <div class="col-9"><span>31/07/1996</span></div>
-            </div>
-            <div class="row">
-              <div class="col-1"><i class="icon ion-person icon"></i></div>
-              <div class="col-9"><span>Thomas Tosch</span></div>
-            </div>
-            <div class="row">
-              <div class="col-1">
-                <i class="icon ion-ios-telephone icon"></i>
-              </div>
-              <div class="col-9"><span>+33 6 06 96 07 31</span></div>
-            </div>
-            <div class="row">
-              <div class="col-1"><i class="icon ion-at icon"></i></div>
-              <div class="col-9"><span>thomas.tosch@uha.fr</span></div>
-            </div>
-          </div>
+          <Contact></Contact>
+          <!--          <div class="contact-info portfolio-info-card">-->
+          <!--            <h2>Contact Info</h2>-->
+          <!--            <div class="row">-->
+          <!--              <div class="col-1">-->
+          <!--                <i class="icon ion-android-calendar icon"></i>-->
+          <!--              </div>-->
+          <!--              <div class="col-9"><span>31/07/1996</span></div>-->
+          <!--            </div>-->
+          <!--            <div class="row">-->
+          <!--              <div class="col-1"><PersonIcon /></div>-->
+          <!--              <div class="col-9"><span>Thomas Tosch</span></div>-->
+          <!--            </div>-->
+          <!--            <div class="row">-->
+          <!--              <div class="col-1">-->
+          <!--                <i class="icon ion-ios-telephone icon"></i>-->
+          <!--              </div>-->
+          <!--              <div class="col-9"><span>+33 6 06 96 07 31</span></div>-->
+          <!--            </div>-->
+          <!--            <div class="row">-->
+          <!--              <div class="col-1"><AtIcon /></div>-->
+          <!--              <div class="col-9"><span>thomas.tosch@uha.fr</span></div>-->
+          <!--            </div>-->
+          <!--          </div>-->
         </div>
       </section>
       <div class="hobbies group">
@@ -503,8 +504,29 @@
 </template>
 
 <script>
+import $ from "jquery";
+// import PersonIcon from "vue-ionicons/dist/ios-person";
+// import AtIcon from "vue-ionicons/dist/ios-at";
+import Contact from "./CV/Contact";
+
+$("#BiblIrimas").on("shown.bs.modal", function() {
+  $(this)
+    .find("iframe")
+    .attr("src", "https://biblirimas.herokuapp.com/");
+});
+$("#Credo-CEP").on("shown.bs.modal", function() {
+  $(this)
+    .find("iframe")
+    .attr("src", "https://credo-cep.herokuapp.com/");
+});
+
 export default {
-  name: "CV"
+  name: "CV",
+  components: {
+    Contact
+    // PersonIcon,
+    // AtIcon
+  }
 };
 </script>
 
