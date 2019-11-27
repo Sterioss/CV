@@ -2,16 +2,24 @@
   <div id="app">
     <Header></Header>
     <Main></Main>
+    <CV></CV>
+    <footer class="page-footer">
+      <Footer></Footer>
+    </footer>
   </div>
 </template>
 
 <script>
 import Header from "./components/Header";
 import Main from "./components/Main";
+import Footer from "./components/Footer";
+import CV from "./components/CV";
 
 export default {
   name: "app",
   components: {
+    CV,
+    Footer,
     Main,
     Header
   }

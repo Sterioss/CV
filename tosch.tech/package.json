@@ -45,7 +45,8 @@
       "google",
       "@vue/prettier"
     ],
-    "rules": {},
+    "rules": {
+    },
     "parserOptions": {
       "parser": "babel-eslint"
     },
