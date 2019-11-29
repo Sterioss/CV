@@ -6,7 +6,7 @@
       v-bind:key="info.id"
       v-for="info in infos"
       :text="info.text"
-    ></info>
+    />
   </div>
 </template>
 
@@ -28,4 +28,4 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<!--<style scoped></style>-->

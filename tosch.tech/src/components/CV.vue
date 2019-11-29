@@ -200,45 +200,10 @@
         <div
           class="col-md-6 col-xl-5 offset-lg-2 offset-xl-3 align-self-center mx-auto"
         >
-          <Contact></Contact>
-          <!--          <div class="contact-info portfolio-info-card">-->
-          <!--            <h2>Contact Info</h2>-->
-          <!--            <div class="row">-->
-          <!--              <div class="col-1">-->
-          <!--                <i class="icon ion-android-calendar icon"></i>-->
-          <!--              </div>-->
-          <!--              <div class="col-9"><span>31/07/1996</span></div>-->
-          <!--            </div>-->
-          <!--            <div class="row">-->
-          <!--              <div class="col-1"><PersonIcon /></div>-->
-          <!--              <div class="col-9"><span>Thomas Tosch</span></div>-->
-          <!--            </div>-->
-          <!--            <div class="row">-->
-          <!--              <div class="col-1">-->
-          <!--                <i class="icon ion-ios-telephone icon"></i>-->
-          <!--              </div>-->
-          <!--              <div class="col-9"><span>+33 6 06 96 07 31</span></div>-->
-          <!--            </div>-->
-          <!--            <div class="row">-->
-          <!--              <div class="col-1"><AtIcon /></div>-->
-          <!--              <div class="col-9"><span>thomas.tosch@uha.fr</span></div>-->
-          <!--            </div>-->
-          <!--          </div>-->
+          <Contact />
         </div>
       </section>
-      <div class="hobbies group">
-        <div class="heading"><h2 class="text-center">Hobbies</h2></div>
-        <p class="text-center text-muted">
-          <i class="material-icons">music_note</i>&nbsp;I do piano on my
-          free-time, I've been practicing for over a year now<br /><i
-            class="fas fa-running"
-          ></i
-          >&nbsp; I used to go running 3 times a week for years, now I go to the
-          gym.<br /><i class="fas fa-laptop-code"></i>&nbsp;I code for fun on
-          platforms like Codingame.com. When I have time I pick up on projects
-          of my own as well.<br />
-        </p>
-      </div>
+      <Hobbies />
     </div>
   </section>
 </template>
@@ -248,6 +213,7 @@ import $ from "jquery";
 // import PersonIcon from "vue-ionicons/dist/ios-person";
 // import AtIcon from "vue-ionicons/dist/ios-at";
 import Contact from "./CV/Contact";
+import Hobbies from "./CV/Hobbies";
 
 $("#BiblIrimas").on("shown.bs.modal", function() {
   $(this)
@@ -263,6 +229,7 @@ $("#Credo-CEP").on("shown.bs.modal", function() {
 export default {
   name: "CV",
   components: {
+    Hobbies,
     Contact
     // PersonIcon,
     // AtIcon
@@ -270,4 +237,4 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped/>

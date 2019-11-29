@@ -13,9 +13,9 @@
 </template>
 
 <script>
-import Header from "./components/Header";
+import Header from "./components/layout/Header";
 import Main from "./components/Main";
-import Footer from "./components/Footer";
+import Footer from "./components/layout/Footer";
 import CV from "./components/CV";
 import HireMe from "./components/HireMe";
 import About from "./components/About";
@@ -390,8 +390,6 @@ export default {
 .portfolio-info-card.skills .progress {
   height: 3px;
 }
-
-
 
 .portfolio-block.cv .hobbies p {
   max-width: 700px;

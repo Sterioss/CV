@@ -10,11 +10,7 @@
 
         <div class="form-group">
           <label for="message">Message</label
-          ><textarea
-            class="form-control"
-            id="message"
-            name="message"
-          ></textarea>
+          ><textarea class="form-control" id="message" name="message" />
         </div>
         <div class="form-group">
           <div class="form-row">
