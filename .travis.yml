@@ -12,5 +12,6 @@ deploy:
   github_token: $GITHUB_TOKEN
   local_dir: dist
   fqdn: tosch.tech
+  target_branch: master
   on:
-    branch: master
+    branch: heroku
