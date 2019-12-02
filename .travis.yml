@@ -6,12 +6,6 @@ cache: npm
 
 script: npm run build
 
-deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  local_dir: dist
-  fqdn: tosch.tech
-  target_branch: master
-  on:
-    branch: heroku
+after_success:
+  'find dist -type f -exec curl --user $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://e113743-ftp.services.easyname.eu/web/{} \;
+  '
