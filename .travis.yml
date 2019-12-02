@@ -7,5 +7,5 @@ cache: npm
 script: npm run build
 
 after_success:
-  'find dist -type f -exec curl --user $FTP_USER:$FTP_PASSWORD --ftp-create-dirs -T {} ftp://e113743-ftp.services.easyname.eu/web/{} \;
+  'curl --user $FTP_USER:$FTP_PASSWORD -T {"index.html"} ftp://e113743-ftp.services.easyname.eu/web/
   '
