@@ -5,10 +5,11 @@ node_js:
 
 cache: npm
 
+install:
+  - sudo apt-get install wput -y
+
 script: npm run build
 
-before_deploy:
-  - sudo apt install -y wput
 deploy:
   provider: script
   script: bash ftp.sh
