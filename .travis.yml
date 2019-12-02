@@ -11,8 +11,6 @@ install:
 
 script: npm run build
 
-deploy:
-  provider: script
-  script: bash ftp.sh
-  on:
-    branch: heroku
+after_success:
+  "cd dist || exit &&
+   wput . ftp://177356ftp1:.eytdbdfctg6@e113743-ftp.services.easyname.eu/apps/web/"
