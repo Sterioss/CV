@@ -7,6 +7,7 @@ cache: npm
 
 install:
   - sudo apt-get install wput -y
+  - npm ci
 
 script: npm run build
 
