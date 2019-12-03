@@ -12,5 +12,5 @@ install:
 script: npm run build
 
 after_success:
-  "cd dist &&
-   wput . -u --disable-tls ftp://177356ftp1:.eytdbdfctg6@e113743-ftp.services.easyname.eu/apps/web/"
+  - "cd dist"
+  - "wput . -u --disable-tls ftp://177356ftp1:.eytdbdfctg6@e113743-ftp.services.easyname.eu/apps/web/"
