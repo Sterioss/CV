@@ -1,6 +1,7 @@
 <template>
   <section id="cv" class="portfolio-block cv" style="padding-top: 100px;">
     <div class="container">
+      <Projects />
       <div class="education group">
         <div class="heading"><h2 class="text-center">Education</h2></div>
         <div class="item">
@@ -214,6 +215,7 @@ import $ from "jquery";
 // import AtIcon from "vue-ionicons/dist/ios-at";
 import Contact from "./CV/Contact";
 import Hobbies from "./CV/Hobbies";
+import Projects from "./CV/Projects";
 
 $("#BiblIrimas").on("shown.bs.modal", function() {
   $(this)
@@ -229,6 +231,7 @@ $("#Credo-CEP").on("shown.bs.modal", function() {
 export default {
   name: "CV",
   components: {
+    Projects,
     Hobbies,
     Contact
     // PersonIcon,
