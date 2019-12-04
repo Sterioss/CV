@@ -1,5 +1,5 @@
 <template>
-  <p class="text-muted">
+  <p class="text-muted" v-html="description">
     {{ description }}
   </p>
 </template>

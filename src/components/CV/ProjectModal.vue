@@ -31,6 +31,18 @@
 </template>
 
 <script>
+import $ from "jquery";
+
+$("#BiblIrimas").on("shown.bs.modal", function() {
+  $(this)
+    .find("iframe")
+    .attr("src", "https://biblirimas.herokuapp.com/");
+});
+$("#Credo-CEP").on("shown.bs.modal", function() {
+  $(this)
+    .find("iframe")
+    .attr("src", "https://credo-cep.herokuapp.com/");
+});
 export default {
   name: "ProjectModal"
 };

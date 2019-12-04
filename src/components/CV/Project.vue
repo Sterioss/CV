@@ -8,15 +8,20 @@
         data-toggle="tooltip"
         title="Click to display on Heroku !"
         ><span class="modal-icon" data-target="#BiblIrimas" data-toggle="modal"
-          ><img class="img-icon" src="heroku-logo-stroke-purple.svg" />
+          ><img
+            alt="heroku icon"
+            class="img-icon"
+            src="../../assets/heroku-logo-stroke-purple.svg"
+          />
           <h3>{{ name }}</h3></span
         >
       </a>
-      <h4 class="organization">PHP - Symfony 4.2</h4>
-      <h4 class="organization">Leader</h4>
+      <h4 class="organization" v-for="tag in tags" :key="tag.id">
+        {{ tag.text }}
+      </h4>
     </div>
     <div class="col-md-6">
-      <span class="period">11/2018 - 01/2019</span>
+      <span class="period">{{ interval.start }} - {{ interval.end }}</span>
     </div>
   </div>
 </template>
@@ -25,7 +30,14 @@
 export default {
   name: "Project",
   props: {
-    name: String
+    name: String,
+    tags: {
+      type: Array,
+      default() {
+        return [];
+      }
+    },
+    interval: Object
   }
 };
 </script>
