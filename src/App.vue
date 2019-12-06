@@ -1,13 +1,14 @@
 <template>
   <div id="app">
-    <Header></Header>
-    <Main></Main>
-    <section class="portfolio-block website gradient"></section>
-    <CV></CV>
-    <HireMe></HireMe>
-    <About></About>
+    <Header />
+    <Main />
+    <section class="portfolio-block website gradient" />
+    <CV />
+    <section class="portfolio-block website gradient" />
+    <HireMe />
+    <About />
     <footer class="page-footer">
-      <Footer></Footer>
+      <Footer />
     </footer>
   </div>
 </template>
@@ -21,18 +22,6 @@ import HireMe from "./components/HireMe";
 import About from "./components/About";
 import Pikaday from "pikaday";
 import $ from "jquery";
-
-$(document).ready(function() {
-  $("[data-bs-hover-animate]")
-    .mouseenter(function() {
-      var a = $(this);
-      a.addClass("animated " + a.attr("data-bs-hover-animate"));
-    })
-    .mouseleave(function() {
-      var a = $(this);
-      a.removeClass("animated " + a.attr("data-bs-hover-animate"));
-    });
-});
 $(".datepicker").each(function() {
   new Pikaday({ field: this });
 });
