@@ -6,6 +6,7 @@
     <CV />
     <section class="portfolio-block website gradient" />
     <HireMe />
+    <section class="portfolio-block website gradient" />
     <About />
     <footer class="page-footer">
       <Footer />
@@ -14,17 +15,13 @@
 </template>
 
 <script>
-import Header from "./components/layout/Header";
-import Main from "./components/Main";
-import Footer from "./components/layout/Footer";
-import CV from "./components/CV";
-import HireMe from "./components/HireMe";
-import About from "./components/About";
-import Pikaday from "pikaday";
-import $ from "jquery";
-$(".datepicker").each(function() {
-  new Pikaday({ field: this });
-});
+const Header = () => import("./components/layout/Header");
+const Main = () => import("./components/Main");
+const Footer = () => import("./components/layout/Footer");
+const CV = () => import("./components/CV");
+const HireMe = () => import("./components/HireMe");
+const About = () => import("./components/About");
+
 export default {
   name: "app",
   components: {
@@ -229,7 +226,7 @@ export default {
   color: #fff;
   height: 70px;
   width: 70px;
-  line-height: 69px;
+  line-height: 63px;
   display: inline-block;
   border-radius: 50%;
 }

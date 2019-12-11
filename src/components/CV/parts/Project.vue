@@ -11,7 +11,7 @@
           ><img
             alt="heroku icon"
             class="img-icon"
-            src="../../assets/heroku-logo-stroke-purple.svg"
+            src="../../../assets/heroku-logo-stroke-purple.svg"
           />
           <h3>{{ name }}</h3></span
         >

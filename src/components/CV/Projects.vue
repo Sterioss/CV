@@ -16,9 +16,9 @@
 </template>
 
 <script>
-import ProjectModal from "./ProjectModal";
-import Project from "./Project";
-import ProjectDescription from "./ProjectDescription";
+import ProjectModal from "./parts/ProjectModal";
+import Project from "./parts/Project";
+import ProjectDescription from "./parts/ProjectDescription";
 export default {
   name: "Projects",
   data: function() {

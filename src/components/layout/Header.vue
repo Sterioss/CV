@@ -31,7 +31,16 @@
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  data: function() {
+    return {
+      nav_items: [
+        { id: 1, name: "", link: "" },
+        { id: 2, name: "", link: "" },
+        { id: 3, name: "", link: "" }
+      ]
+    };
+  }
 };
 </script>
 

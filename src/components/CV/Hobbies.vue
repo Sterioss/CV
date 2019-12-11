@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Hobby from "./Hobby";
+import Hobby from "./parts/Hobby";
 
 export default {
   name: "Hobbies",

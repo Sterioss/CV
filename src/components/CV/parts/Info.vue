@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="col-1">
-      <component :is="this.icon + '-icon'" rootClass="icon" />
+      <IconLoader :icon="icon" class="icon" />
     </div>
     <div class="col-9">
       <span>{{ text }}</span>
@@ -10,8 +10,10 @@
 </template>
 
 <script>
+import IconLoader from "../../Utils/IconLoader";
 export default {
   name: "Info",
+  components: { IconLoader },
   props: {
     icon: String,
     text: String

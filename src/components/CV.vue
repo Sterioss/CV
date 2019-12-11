@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import Skills from "./CV/Skills";
-const Contact = () => import("./CV/Contact");
+const Skills = () => import("./CV/Skills");
+const Contact = () => import("./CV/parts/Contact");
 const Hobbies = () => import("./CV/Hobbies");
 const Projects = () => import("./CV/Projects");
 const Educations = () => import("./CV/Educations");

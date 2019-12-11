@@ -11,15 +11,15 @@
             <SkillCategory name="Back-end" :skills="skills['Back-end']" />
           </div>
         </div>
-        <SkillCategory :name="Software" :skills="skills.Software" />
-        <SkillCategory :name="Others" :skills="skills.Others" />
+        <SkillCategory name="Software" :skills="skills['Software']" />
+        <SkillCategory name="Others" :skills="skills['Others']" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import SkillCategory from "./SkillCategory";
+import SkillCategory from "./parts/SkillCategory";
 export default {
   name: "Skills",
   components: { SkillCategory },

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Education from "./Education";
+import Education from "./parts/Education";
 export default {
   name: "Educations",
   components: { Education },
