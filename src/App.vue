@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <GoTop :bottom="30" bg-color="#0ea0ff" />
     <Header />
     <Main />
     <section class="portfolio-block website gradient" />
@@ -21,6 +22,7 @@ const Footer = () => import("./components/layout/Footer");
 const CV = () => import("./components/CV");
 const HireMe = () => import("./components/HireMe");
 const About = () => import("./components/About");
+const GoTop = () => import("@inotom/vue-go-top");
 
 export default {
   name: "app",
@@ -30,7 +32,8 @@ export default {
     CV,
     Footer,
     Main,
-    Header
+    Header,
+    GoTop
   }
 };
 </script>

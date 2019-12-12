@@ -10,7 +10,11 @@
         <p v-html="about_me">
           {{ about_me }}
         </p>
-        <a class="btn btn-outline-primary" role="button" href="#hire-me"
+        <a
+          class="btn btn-outline-primary"
+          role="button"
+          href="#"
+          v-scroll-to="'#hire-me'"
           >Hire me</a
         >
       </div>

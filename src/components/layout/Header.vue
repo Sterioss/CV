@@ -14,14 +14,18 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="nav navbar-nav ml-auto">
-          <li class="nav-item" role="presentation">
-            <a class="nav-link active" href="#home">Home</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" href="#cv">CV</a>
-          </li>
-          <li class="nav-item" role="presentation">
-            <a class="nav-link" href="#hire-me">Hire me</a>
+          <li
+            class="nav-item"
+            role="presentation"
+            v-for="nav_item in nav_items"
+            :key="nav_item.id"
+          >
+            <a
+              class="nav-link active"
+              href="#"
+              v-scroll-to="{ el: nav_item.link }"
+              >{{ nav_item.name }}</a
+            >
           </li>
         </ul>
       </div>
@@ -35,9 +39,9 @@ export default {
   data: function() {
     return {
       nav_items: [
-        { id: 1, name: "", link: "" },
-        { id: 2, name: "", link: "" },
-        { id: 3, name: "", link: "" }
+        { id: 1, name: "Home", link: "#home" },
+        { id: 2, name: "CV", link: "#cv" },
+        { id: 3, name: "Hire me", link: "#hire-me" }
       ]
     };
   }
