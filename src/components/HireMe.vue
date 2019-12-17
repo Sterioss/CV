@@ -2,56 +2,63 @@
   <section id="hire-me" class="portfolio-block hire-me">
     <div class="container">
       <div class="heading"><h2>Hire Me</h2></div>
-      <form id="hire-form" @submit.prevent="onSubmit">
-        <div class="form-group">
-          <label for="email">Email</label
-          ><input
-            class="form-control"
-            type="email"
+      <b-form id="hire-form" @submit.stop.prevent="onSubmit">
+        <b-form-group label="Email" label-for="email">
+          <b-form-input
             id="email"
             name="email"
+            type="email"
             v-model="$v.form.email.$model"
+            :state="$v.form.email.$dirty ? !$v.form.email.$error : null"
           />
-        </div>
-
-        <div
-          class="form-group"
-          :class="{ 'form-group--error': $v.form.message.$error }"
-        >
-          <label for="message">Message</label
-          ><textarea
-            class="form-control"
+          <b-form-invalid-feedback v-if="!$v.form.email.required">
+            This field is required.
+          </b-form-invalid-feedback>
+          <b-form-invalid-feedback v-if="!$v.form.email.email">
+            Must be a valid email.
+          </b-form-invalid-feedback>
+        </b-form-group>
+        <b-form-group label="Message" label-for="message">
+          <b-textarea
             id="message"
             name="message"
             v-model="$v.form.message.$model"
+            :state="$v.form.message.$dirty ? !$v.form.message.$error : null"
           />
-          <div class="invalid-feedback" v-if="!$v.form.message.required">
-            Field is required
-          </div>
-          <div class="invalid-feedback" v-if="!$v.form.message.minLength">
-            Name must have at least
+          <b-form-invalid-feedback v-if="!$v.form.message.required">
+            This field is required.
+          </b-form-invalid-feedback>
+          <b-form-invalid-feedback v-if="!$v.form.message.minLength">
+            Must have at least
             {{ $v.form.message.$params.minLength.min }} letters.
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="form-row">
-            <div class="col-md-6 offset-xl-3 button">
-              <button class="btn btn-primary btn-block" type="submit">
+          </b-form-invalid-feedback>
+        </b-form-group>
+        <b-form-group>
+          <b-form-row>
+            <b-col md="6" offset-xl="3" class="button">
+              <b-btn
+                type="submit"
+                variant="primary"
+                block
+                :disabled="$v.form.$invalid"
+              >
                 Hire Me
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
+              </b-btn>
+            </b-col>
+          </b-form-row>
+        </b-form-group>
+      </b-form>
     </div>
   </section>
 </template>
 
 <script>
+import { validationMixin } from "vuelidate";
 import { email, required, minLength } from "vuelidate/lib/validators";
 
 export default {
   name: "HireMe",
+  mixins: [validationMixin],
   data() {
     return {
       form: {
@@ -61,7 +68,21 @@ export default {
     };
   },
   methods: {
-    onSubmit() {}
+    onSubmit() {
+      this.$v.form.$touch();
+      this.toast();
+      if (this.$v.form.$anyError) {
+        return;
+      }
+      return 1;
+    },
+    toast() {
+      this.$bvToast.toast(`This is toast number`, {
+        title: "BootstrapVue Toast",
+        autoHideDelay: 5000,
+        appendToast: true
+      });
+    }
   },
   validations: {
     form: {
